@@ -1,6 +1,5 @@
 package com.example.bhagvatgeetaapp.ui
 
-import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.bhagvatgeetaapp.repository.GeetaRepository

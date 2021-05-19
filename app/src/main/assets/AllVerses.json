@@ -80,16 +80,6 @@
     "verse_order": 8
   },
   {
-    "id": 45,
-    "verse_number": "45",
-    "text": "अहो बत महत्पापं कर्तुं व्यवसिता वयम् |\nयद्राज्यसुखलोभेन हन्तुं स्वजनमुद्यता: ॥45॥\n",
-    "transliteration": "aho bata mahat pāpaṁ kartuṁ vyavasitā vayam\nyad rājya-sukha-lobhena hantuṁ sva-janam udyatāḥ\n",
-    "word_meanings": "aho—alas; bata—how; mahat—great; pāpam—sins; kartum—to perform; vyavasitāḥ—have decided; vayam—we; yat—because; rājya-sukha-lobhena—driven by the desire for kingly pleasure; hantum—to kill; sva-janam—kinsmen; udyatāḥ—intending;\n",
-    "meaning": "What a pity that we have resolved to commit a great sin by being eager to kill our own kith and kin, out of greed for the pleasures of a kingdom!",
-    "chapter_number": 1,
-    "verse_order": 45
-  },
-  {
     "id": 9,
     "verse_number": "9",
     "text": "अन्ये च बहव: शूरा मदर्थे त्यक्तजीविता: |\nनानाशस्त्रप्रहरणा: सर्वे युद्धविशारदा: ॥9॥\n",
@@ -448,6 +438,16 @@
     "meaning": "O Janardana, we have heard that living in hell becomes inevitable for those persons whose family duties get destroyed.",
     "chapter_number": 1,
     "verse_order": 44
+  },
+  {
+    "id": 45,
+    "verse_number": "45",
+    "text": "अहो बत महत्पापं कर्तुं व्यवसिता वयम् |\nयद्राज्यसुखलोभेन हन्तुं स्वजनमुद्यता: ॥45॥\n",
+    "transliteration": "aho bata mahat pāpaṁ kartuṁ vyavasitā vayam\nyad rājya-sukha-lobhena hantuṁ sva-janam udyatāḥ\n",
+    "word_meanings": "aho—alas; bata—how; mahat—great; pāpam—sins; kartum—to perform; vyavasitāḥ—have decided; vayam—we; yat—because; rājya-sukha-lobhena—driven by the desire for kingly pleasure; hantum—to kill; sva-janam—kinsmen; udyatāḥ—intending;\n",
+    "meaning": "What a pity that we have resolved to commit a great sin by being eager to kill our own kith and kin, out of greed for the pleasures of a kingdom!",
+    "chapter_number": 1,
+    "verse_order": 45
   },
   {
     "id": 46,

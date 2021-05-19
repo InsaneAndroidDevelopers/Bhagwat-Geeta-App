@@ -37,7 +37,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:src="@drawable/ic_left_arrow"
             android:layout_gravity="center"
             android:padding="10dp"
             android:background="@null"/>

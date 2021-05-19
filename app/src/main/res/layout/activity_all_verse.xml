@@ -5,10 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bkgrnd"
     tools:context=".AllVerse">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/all_verse_recycler_view"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/all_verse_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

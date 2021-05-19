@@ -7,8 +7,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.bhagvatgeetaapp.api.responses.Chapter
-import com.example.bhagvatgeetaapp.api.responses.Verse
 import com.example.bhagvatgeetaapp.ui.GeetaViewModel
 import com.example.bhagvatgeetaapp.ui.ViewModelFactory
 import com.example.bhagvatgeetaapp.utils.Status
@@ -18,7 +16,7 @@ import kotlinx.android.synthetic.main.shlok_card.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: GeetaViewModel
-    var chapters = mutableListOf<Chapter>()
+    //var chapters = mutableListOf<Chapter>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +24,9 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this, ViewModelFactory()).get(GeetaViewModel::class.java)
 
-        btn_random.setOnClickListener {
-            getRandomVerse()
-        }
+//        btn_random.setOnClickListener {
+//            getRandomVerse()
+//        }
 //        viewModel.getAllChapters().observe(this, Observer {
 //            it?.let { resource ->
 //                when(resource.status){
@@ -91,22 +89,22 @@ class MainActivity : AppCompatActivity() {
         meaningText.text = meaning
     }
 
-    private fun getRandomVerse(){
-        viewModel.getRandomVerse().observe(this, Observer {
-            it?.let { resource ->
-                when(resource.status){
-                    Status.SUCCESS -> {
-                        resource.data?.let {
-                            setUpViews(it.chapter, it.verse, it.slok, it.tej.ht)
-                        }
-                    }
-                    Status.ERROR -> {
-                        Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
-                    }
-                    Status.LOADING -> {
-                    }
-                }
-            }
-        })
-    }
+//    private fun getRandomVerse(){
+//        viewModel.getRandomVerse().observe(this, Observer {
+//            it?.let { resource ->
+//                when(resource.status){
+//                    Status.SUCCESS -> {
+//                        resource.data?.let {
+//                            setUpViews(it.chapter, it.verse, it.slok, it.tej.ht)
+//                        }
+//                    }
+//                    Status.ERROR -> {
+//                        Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+//                    }
+//                    Status.LOADING -> {
+//                    }
+//                }
+//            }
+//        })
+//    }
 }

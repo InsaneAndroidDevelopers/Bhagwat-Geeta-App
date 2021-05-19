@@ -1,115 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    android:id="@+id/shlok_card"
     android:layout_width="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="30dp"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bkgrnd">
+    app:cardCornerRadius="10dp"
+    android:elevation="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/shlok_card"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="10dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="70dp"
-        app:cardCornerRadius="8dp"
-        android:elevation="8dp">
+        android:padding="10dp">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/chapter_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chapter: 1"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/verse_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verse: 1"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/chapter_name"
+            android:text="@string/shlokName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/chapter_tv"
+            android:textSize="24sp"
+            android:textColor="#FF6400" />
+
+        <TextView
+            android:id="@+id/shlokHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chapter_name"
+            android:layout_centerHorizontal="true"
+            android:text="Verse"
+            android:layout_marginTop="5dp"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"/>
+
+        <TextView
+            android:id="@+id/shlokText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shlokHead"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/_47"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
 
-            <TextView
-                android:id="@+id/chapter_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chapter: 1"
-                android:layout_margin="5dp"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/meaningHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shlokText"
+            android:layout_centerHorizontal="true"
+            android:text="Meaning"
+            android:layout_marginTop="-5dp"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"/>
 
-            <TextView
-                android:id="@+id/verse_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Verse: 1"
-                android:layout_margin="5dp"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="5dp"
-                android:layout_marginEnd="5dp" />
+        <TextView
+            android:id="@+id/meaningText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meaningHead"
+            android:layout_marginTop="5dp"
+            android:text="@string/meaningText"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
 
-            <TextView
-                android:id="@+id/chapter_name"
-                android:text="@string/shlokName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/chapter_tv"
-                android:textSize="24sp"
-                android:textColor="#FF6400" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="12dp"
+            android:scaleType="fitCenter"
+            android:layout_below="@id/meaningText"
+            android:src="@drawable/krishna" />
 
-            <TextView
-                android:id="@+id/shlokHead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chapter_name"
-                android:layout_centerHorizontal="true"
-                android:text="Verse"
-                android:layout_marginTop="5dp"
-                android:textSize="22sp"
-                android:textStyle="bold|italic"/>
+    </RelativeLayout>
 
-            <TextView
-                android:id="@+id/shlokText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/shlokHead"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/_47"
-                android:textAlignment="center"
-                android:gravity="center_horizontal"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:id="@+id/meaningHead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/shlokText"
-                android:layout_centerHorizontal="true"
-                android:text="Meaning"
-                android:layout_marginTop="5dp"
-                android:textSize="22sp"
-                android:textStyle="bold|italic"/>
-
-            <TextView
-                android:id="@+id/meaningText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/meaningHead"
-                android:layout_marginTop="5dp"
-                android:text="@string/meaningText"
-                android:textAlignment="center"
-                android:gravity="center_horizontal"
-                android:textColor="@color/black"
-                android:textSize="18sp"/>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="5dp"
-                android:layout_alignParentBottom="true"
-                android:layout_below="@id/meaningText"
-                android:src="@drawable/krishna" />
-
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
-
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
