@@ -43,8 +43,8 @@ class AllVerse : AppCompatActivity() {
     private fun provideVerses() : ArrayList<VersesItem>{
         val data: String = viewModel.getVersesData(applicationContext)
         val type: Type = object : TypeToken<List<VersesItem?>?>() {}.type
-        val chapters: List<VersesItem> = Gson().fromJson<List<VersesItem>>(data, type)
-        return chapters as ArrayList<VersesItem>
+        val verses: List<VersesItem> = Gson().fromJson<List<VersesItem>>(data, type)
+        return verses as ArrayList<VersesItem>
     }
 
     private fun provideFilterVerses(num: Int) : ArrayList<VersesItem>{

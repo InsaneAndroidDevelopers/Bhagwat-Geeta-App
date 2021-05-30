@@ -1,110 +1,90 @@
 package com.example.bhagvatgeetaapp
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.example.bhagvatgeetaapp.models.ChaptersItem
 import com.example.bhagvatgeetaapp.ui.GeetaViewModel
 import com.example.bhagvatgeetaapp.ui.ViewModelFactory
-import com.example.bhagvatgeetaapp.utils.Status
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.shlok_card.*
+import java.lang.reflect.Type
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: GeetaViewModel
-    //var chapters = mutableListOf<Chapter>()
+    private var selectedPosition = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         viewModel = ViewModelProviders.of(this, ViewModelFactory()).get(GeetaViewModel::class.java)
 
-//        btn_random.setOnClickListener {
-//            getRandomVerse()
+//        val chaptersArrayAdapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.chapters))
+//        sp_chapters.adapter = chaptersArrayAdapter
+//
+//        sp_chapters.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+//            override fun onNothingSelected(parent: AdapterView<*>?) {
+//            }
+//
+//            override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
+//                selectedPosition = position
+//                makeVerseAdapter(selectedPosition)
+//            }
 //        }
-//        viewModel.getAllChapters().observe(this, Observer {
-//            it?.let { resource ->
-//                when(resource.status){
-//                    Status.SUCCESS -> {
-//                        resource.data?.let {
-//                            Log.d("ALLCHAP", it.toString())
-//                        }
-//                    }
-//                    Status.ERROR -> {
-//                        Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
-//                    }
-//                    Status.LOADING -> {
-//
-//                    }
-//                }
+        initViews()
+//        sp_verses.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+//            override fun onNothingSelected(parent: AdapterView<*>?) {
 //            }
-//        })
-
-//        viewModel.getVerseInfo(7,9).observe(this, Observer {
-//            it?.let { resource ->
-//                when(resource.status){
-//                    Status.SUCCESS -> {
-//                        resource.data?.let {
-//                            Log.d("INFO", it.toString())
-//                        }
-//                    }
-//                    Status.ERROR -> {
-//                        Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
-//                    }
-//                    Status.LOADING -> {
-//
-//                    }
-//                }
+//            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+//                Toast.makeText(this@MainActivity, "Chapter -${selectedPosition+1} Verse - ${position+1}", Toast.LENGTH_SHORT).show()
 //            }
-//        })
-//
-//        viewModel.getChapterInfo(5).observe(this, Observer {
-//            it?.let { resource ->
-//                when(resource.status){
-//                    Status.SUCCESS -> {
-//                        resource.data?.let {
-//                            Log.d("INFO", it.toString())
-//                        }
-//                    }
-//                    Status.ERROR -> {
-//                        Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
-//                    }
-//                    Status.LOADING -> {
-//
-//                    }
-//                }
-//            }
-//        })
+//        }
     }
 
-    private fun setUpViews(chapter: Int, verse: Int, slok: String, meaning: String) {
-        chapter_tv.text = "Chapter : ${chapter}"
-        verse_tv.text = "Verse : ${verse}"
-        shlokText.text = slok
-        meaningText.text = meaning
+    private fun provideChapters() : ArrayList<ChaptersItem>{
+        val data: String = viewModel.getChaptersData(applicationContext)
+        val type: Type = object : TypeToken<List<ChaptersItem?>?>() {}.type
+        val chapters: List<ChaptersItem> = Gson().fromJson<List<ChaptersItem>>(data, type)
+        return chapters as ArrayList<ChaptersItem>
     }
 
-//    private fun getRandomVerse(){
-//        viewModel.getRandomVerse().observe(this, Observer {
-//            it?.let { resource ->
-//                when(resource.status){
-//                    Status.SUCCESS -> {
-//                        resource.data?.let {
-//                            setUpViews(it.chapter, it.verse, it.slok, it.tej.ht)
-//                        }
-//                    }
-//                    Status.ERROR -> {
-//                        Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
-//                    }
-//                    Status.LOADING -> {
-//                    }
-//                }
-//            }
-//        })
-//    }
+    private fun makeVerseAdapter(selected: Int){
+        val count = provideChapters().find { it.chapter_number == selected + 1 }!!.verses_count
+        val verseArray = mutableListOf<String>()
+        for(i in 0..count-1){
+            verseArray.add(i, "Verse ${i+1}")
+        }
+        val versesAdapter = ArrayAdapter(this@MainActivity, R.layout.support_simple_spinner_dropdown_item, verseArray)
+        sp_verses.adapter = versesAdapter
+    }
+
+    private fun initViews(){
+        val chaptersArrayAdapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.chapters))
+        sp_chapters.adapter = chaptersArrayAdapter
+
+        sp_chapters.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+            override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                selectedPosition = position
+                makeVerseAdapter(selectedPosition)
+            }
+        }
+
+        sp_verses.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                Toast.makeText(this@MainActivity, "Chapter -${selectedPosition+1} Verse - ${position+1}", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
 }

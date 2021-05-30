@@ -1,29 +1,18 @@
 package com.example.bhagvatgeetaapp
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bhagvatgeetaapp.adapters.AllChaptersAdapter
 import com.example.bhagvatgeetaapp.models.ChaptersItem
-import com.example.bhagvatgeetaapp.models.VersesItem
 import com.example.bhagvatgeetaapp.ui.GeetaViewModel
 import com.example.bhagvatgeetaapp.ui.ViewModelFactory
-import com.example.bhagvatgeetaapp.utils.Status
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_all_chapters.*
 import java.lang.reflect.Type
-import kotlin.coroutines.coroutineContext
 
 class AllChapters : AppCompatActivity() {
 

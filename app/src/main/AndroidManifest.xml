@@ -13,13 +13,13 @@
         android:theme="@style/Theme.BhagvatGeetaApp">
         <activity android:name=".AllVerse"></activity>
         <activity android:name=".AllChapters">
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity">
         </activity>
     </application>
 
