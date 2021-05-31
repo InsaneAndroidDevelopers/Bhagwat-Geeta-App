@@ -43,7 +43,7 @@
             android:layout_gravity="center"
             android:padding="10dp"
             android:background="@null"/>
-
+        
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
