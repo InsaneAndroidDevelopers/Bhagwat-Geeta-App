@@ -1,7 +1,11 @@
 package com.example.bhagvatgeetaapp
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bhagvatgeetaapp.adapters.AllChaptersAdapter
@@ -12,6 +16,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_all_chapters.*
+import kotlinx.android.synthetic.main.chapter_info_extra.*
+import kotlinx.android.synthetic.main.chapter_info_extra.view.*
 import java.lang.reflect.Type
 
 class AllChapters : AppCompatActivity() {
@@ -31,16 +37,21 @@ class AllChapters : AppCompatActivity() {
         all_chapters_recycler_view.adapter = adapter
 
         adapter.setOnItemClickListener {
-
+            val ch = it
             val bottomSheetDialog = BottomSheetDialog(this)
-            bottomSheetDialog.setContentView(R.layout.chapter_info_extra)
+            val v = LayoutInflater.from(applicationContext).inflate(R.layout.chapter_info_extra,null)
+            bottomSheetDialog.setContentView(v)
+            v.ChapterNoTv.text = "Chapter ${it.chapter_number}"
+            v.ChapterNameSanTv.text = it.name
+            v.SummaryTv.text = it.chapter_summary
+            v.readNowBtn.setOnClickListener {
+                val intent = Intent(applicationContext, AllVerse::class.java)
+                intent.putExtra("Number",ch.chapter_number )
+                intent.putExtra("Name", ch.name)
+                startActivity(intent)
+                bottomSheetDialog.dismiss()
+            }
             bottomSheetDialog.show()
-
-//            val intent = Intent(applicationContext, AllVerse::class.java)
-//            intent.putExtra("Number", it.chapter_number)
-//            intent.putExtra("Name", it.name)
-//            Log.d("TAG", it.name)
-//            startActivity(intent)
         }
 
     }

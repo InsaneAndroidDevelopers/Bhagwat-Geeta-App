@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerseActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="10dp"
+        android:elevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_chNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chapter: 1"
+                android:layout_margin="5dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_verNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verse: 1"
+                android:layout_margin="5dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp" />
+
+            <TextView
+                android:id="@+id/tv_chName"
+                android:text="@string/shlokName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="24sp"
+                android:textColor="#FF6400" />
+
+            <TextView
+                android:id="@+id/shlokHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_chName"
+                android:layout_centerHorizontal="true"
+                android:text="Verse"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"/>
+
+            <TextView
+                android:id="@+id/tv_verText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shlokHead"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/_47"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/meaningHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_verText"
+                android:layout_centerHorizontal="true"
+                android:text="Meaning"
+                android:layout_marginTop="-5dp"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"/>
+
+            <TextView
+                android:id="@+id/tv_meanText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/meaningHead"
+                android:layout_marginTop="5dp"
+                android:text="@string/meaningText"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="12dp"
+                android:scaleType="fitCenter"
+                android:layout_below="@id/tv_meanText"
+                android:src="@drawable/krishna" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

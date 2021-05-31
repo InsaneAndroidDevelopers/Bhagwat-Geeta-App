@@ -1,5 +1,6 @@
 package com.example.bhagvatgeetaapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,33 +20,38 @@ import java.lang.reflect.Type
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: GeetaViewModel
-    private var selectedPosition = 0
+    private var selectedChapter = 0
+    private var selectedVerse = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel = ViewModelProviders.of(this, ViewModelFactory()).get(GeetaViewModel::class.java)
 
-//        val chaptersArrayAdapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.chapters))
-//        sp_chapters.adapter = chaptersArrayAdapter
-//
-//        sp_chapters.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//            }
-//
-//            override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                selectedPosition = position
-//                makeVerseAdapter(selectedPosition)
-//            }
-//        }
         initViews()
-//        sp_verses.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//            }
-//            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                Toast.makeText(this@MainActivity, "Chapter -${selectedPosition+1} Verse - ${position+1}", Toast.LENGTH_SHORT).show()
-//            }
-//        }
+        initButtons()
+
+    }
+
+    private fun initButtons(){
+        btn_goToVerse.setOnClickListener {
+            val intent = Intent(this, VerseActivity::class.java)
+            intent.putExtra("ChapterNum", selectedChapter+1)
+            intent.putExtra("VerseNum", selectedVerse+1)
+            startActivity(intent)
+        }
+
+        btn_explore.setOnClickListener {
+            val intent = Intent(this, AllChapters::class.java)
+            startActivity(intent)
+        }
+
+        btn_goToRandom.setOnClickListener {
+            val intent = Intent(this, VerseActivity::class.java)
+            intent.putExtra("ChapterNum", -1)
+            intent.putExtra("VerseNum", -1)
+            startActivity(intent)
+        }
     }
 
     private fun provideChapters() : ArrayList<ChaptersItem>{
@@ -73,8 +79,8 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
             override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectedPosition = position
-                makeVerseAdapter(selectedPosition)
+                selectedChapter = position
+                makeVerseAdapter(selectedChapter)
             }
         }
 
@@ -82,7 +88,8 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                Toast.makeText(this@MainActivity, "Chapter -${selectedPosition+1} Verse - ${position+1}", Toast.LENGTH_SHORT).show()
+                selectedVerse = position
+                Toast.makeText(this@MainActivity, "Chapter -${selectedChapter+1} Verse - ${selectedVerse+1}", Toast.LENGTH_SHORT).show()
             }
         }
 

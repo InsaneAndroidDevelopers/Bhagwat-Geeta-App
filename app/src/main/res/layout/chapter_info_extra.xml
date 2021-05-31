@@ -42,7 +42,7 @@
         android:textColor="@color/black"
         android:layout_marginTop="5dp"
         />
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/readNowBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

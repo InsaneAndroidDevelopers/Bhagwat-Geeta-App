@@ -19,4 +19,28 @@
         android:layout_marginTop="10dp"
         android:layout_below="@+id/sp_chapters"/>
 
+    <Button
+        android:id="@+id/btn_goToVerse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sp_verses"
+        android:layout_margin="5dp"
+        android:text="GO TO VERSE"/>
+
+    <Button
+        android:id="@+id/btn_explore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_goToVerse"
+        android:layout_margin="5dp"
+        android:text="EXPLORE"/>
+
+    <Button
+        android:id="@+id/btn_goToRandom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_explore"
+        android:layout_margin="5dp"
+        android:text="GO TO RANDOM"/>
+
 </RelativeLayout>
