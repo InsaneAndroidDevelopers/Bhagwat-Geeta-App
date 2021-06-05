@@ -1,26 +1,17 @@
 package com.example.bhagvatgeetaapp
 
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.Gravity
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bhagvatgeetaapp.adapters.AllChaptersAdapter
-import com.example.bhagvatgeetaapp.models.ChaptersItem
 import com.example.bhagvatgeetaapp.ui.GeetaViewModel
 import com.example.bhagvatgeetaapp.ui.ViewModelFactory
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_all_chapters.*
 import kotlinx.android.synthetic.main.chapter_info_extra.view.*
-import java.lang.reflect.Type
 
 class AllChapters : AppCompatActivity() {
 
@@ -40,7 +31,7 @@ class AllChapters : AppCompatActivity() {
 
         adapter.setOnItemClickListener {
             val ch = it
-            val bottomSheetDialog = BottomSheetDialog(this)
+            val bottomSheetDialog = BottomSheetDialog(this, R.style.BottomSheetTheme)
             val v = LayoutInflater.from(applicationContext).inflate(R.layout.chapter_info_extra,null)
             bottomSheetDialog.setContentView(v)
             v.ChapterNoTv.text = "Chapter ${it.chapter_number}"

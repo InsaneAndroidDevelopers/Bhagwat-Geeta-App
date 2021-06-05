@@ -1,24 +1,24 @@
 <resources>
     <string name="app_name">Bhagvat Geeta App</string>
     <string-array name="chapters">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
+        <item>Chapter 1</item>
+        <item>Chapter 2</item>
+        <item>Chapter3</item>
+        <item>Chapter4</item>
+        <item>Chapter 5</item>
+        <item>Chapter 6</item>
+        <item>Chapter 7</item>
+        <item>Chapter 8</item>
+        <item>Chapter 9</item>
+        <item>Chapter 10</item>
+        <item>Chapter 11</item>
+        <item>Chapter 12</item>
+        <item>Chapter 13</item>
+        <item>Chapter 14</item>
+        <item>Chapter 15</item>
+        <item>Chapter 16</item>
+        <item>Chapter 17</item>
+        <item>Chapter 18</item>
     </string-array>
     <string name="_47">सञ्जय उवाच | एवमुक्त्वार्जुन: सङ्ख्ये रथोपस्थ उपाविशत् | विसृज्य सशरं चापं शोकसंविग्नमानस: || 47||</string>
     <string name="shlokName">अर्जुनविषादयोग</string>
