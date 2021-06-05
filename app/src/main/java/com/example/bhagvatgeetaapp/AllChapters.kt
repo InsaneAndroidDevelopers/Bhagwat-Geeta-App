@@ -1,12 +1,15 @@
 package com.example.bhagvatgeetaapp
 
-import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bhagvatgeetaapp.adapters.AllChaptersAdapter
 import com.example.bhagvatgeetaapp.models.ChaptersItem
@@ -16,7 +19,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_all_chapters.*
-import kotlinx.android.synthetic.main.chapter_info_extra.*
 import kotlinx.android.synthetic.main.chapter_info_extra.view.*
 import java.lang.reflect.Type
 
@@ -32,8 +34,8 @@ class AllChapters : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this, ViewModelFactory()).get(GeetaViewModel::class.java)
 
-        all_chapters_recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        adapter = AllChaptersAdapter(provideChapters())
+        all_chapters_recycler_view.layoutManager = GridLayoutManager(this,2)
+        adapter = AllChaptersAdapter(viewModel.provideChapters(this))
         all_chapters_recycler_view.adapter = adapter
 
         adapter.setOnItemClickListener {
@@ -53,13 +55,5 @@ class AllChapters : AppCompatActivity() {
             }
             bottomSheetDialog.show()
         }
-
-    }
-
-    private fun provideChapters() : ArrayList<ChaptersItem>{
-        val data: String = viewModel.getChaptersData(applicationContext)
-        val type: Type = object : TypeToken<List<ChaptersItem?>?>() {}.type
-        val chapters: List<ChaptersItem> = Gson().fromJson<List<ChaptersItem>>(data, type)
-        return chapters as ArrayList<ChaptersItem>
     }
 }
