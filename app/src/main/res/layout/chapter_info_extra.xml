@@ -1,51 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+
+<LinearLayout
+    android:id="@+id/bottom_sheet"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/dg">
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:background="@drawable/bottom_sheet"
+    android:orientation="vertical"
 
-    <TextView
-        android:id="@+id/ChapterNoTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chapter No: 1"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:textSize="22sp"
-        android:textColor="@color/black" />
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center|top"
+        android:src="@drawable/line"
+        />
+        <TextView
+            android:id="@+id/ChapterNoTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chapter No: 1"
+            android:layout_gravity="center"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/ChapterNameSanTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="अर्जुनविषादयोग"
+            android:textSize="34sp"
+            android:layout_gravity="center"
+            android:textColor="@android:color/holo_orange_dark"
+            />
 
-    <TextView
-        android:id="@+id/ChapterNameSanTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="अर्जुनविषादयोग"
-        android:layout_below="@+id/ChapterNoTv"
-        android:layout_centerHorizontal="true"
-        android:textSize="34sp"
-        android:layout_gravity="center"
-        android:textColor="@android:color/holo_orange_dark"/>
 
     <TextView
         android:id="@+id/SummaryTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ChapterNameSanTv"
+        android:layout_marginHorizontal="25dp"
         android:textAlignment="center"
         android:gravity="center_horizontal"
         android:text="@string/decription"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="5dp" />
-
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        />
     <Button
         android:id="@+id/readNowBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/SummaryTv"
         android:layout_marginTop="6dp"
-        android:text="Read" />
+        android:background="@drawable/button"
+        android:text="Read"
+        android:textColor="@color/app_white"
+        />
 
-</RelativeLayout>
+
+
+
+</LinearLayout>
