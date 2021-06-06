@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -22,29 +21,30 @@
         android:orientation="horizontal"
         android:layout_margin="4dp">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btn_explore"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_explore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_left_arrow"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:scaleType="centerCrop"
+            app:cardCornerRadius="20dp"
+            android:elevation="12dp"
+            app:cardBackgroundColor="@color/app_orange">
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_left_arrow"
-                android:layout_weight="1"
-                android:layout_margin="4dp"
-                android:scaleType="centerCrop"
-                app:cardCornerRadius="20dp"
-                android:elevation="12dp"
-                app:cardBackgroundColor="@color/app_orange"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="READ CHAPTER WISE"
-                    android:fontFamily="@font/kaushan_script"
-                    android:textAlignment="center"
-                    android:textSize="24dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="READ CHAPTER WISE"
+                android:fontFamily="@font/kaushan_script"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btn_goToRandom"
@@ -65,7 +65,7 @@
                 android:fontFamily="@font/kaushan_script"
                 android:text="READ RANDOM SHLOKA"
                 android:textAlignment="center"
-                android:textSize="24dp"
+                android:textSize="20sp"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>

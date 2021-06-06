@@ -49,13 +49,15 @@
         android:text="@string/decription"
         android:textSize="16sp"
         android:textColor="@color/white"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
 
     <Button
         android:id="@+id/readNowBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/button"
         android:text="Read"
         android:textColor="@color/app_white" />

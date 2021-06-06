@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.google.android.material.card.MaterialCardView android:id="@+id/card_view"
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="10dp"
     android:layout_margin="4dp"
+    app:cardElevation="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -47,16 +49,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/card_bg"
-            android:padding="30dp">
+            android:padding="25dp">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/book"
+                android:scaleType="centerCrop"
+                android:background="@null"/>
 
             <TextView
                 android:id="@+id/chapter_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
                 android:text="Chapter 10"
-                android:textColor="@color/white"
-                android:textSize="24sp"/>
+                android:textStyle="bold"
+                android:layout_below="@id/img"
+                android:textColor="@color/app_blue"
+                android:textSize="20sp"/>
 
         </RelativeLayout>
 
