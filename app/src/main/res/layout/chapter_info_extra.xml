@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center|top"
-        android:src="@drawable/line"/>
+        android:src="@drawable/line"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +28,7 @@
             android:layout_gravity="center"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
@@ -38,6 +39,7 @@
         android:text="अर्जुनविषादयोग"
         android:textSize="25sp"
         android:layout_gravity="center"
+        android:textStyle="bold"
         android:textColor="@android:color/holo_orange_dark" />
 
     <TextView
@@ -48,7 +50,7 @@
         android:gravity="center_horizontal"
         android:text="@string/decription"
         android:textSize="16sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"/>
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="app_white">#F5E6CA</color>
-    <color name="app_orange">#FB9300</color>
-    <color name="app_red">#F54748</color>
-    <color name="app_blue">#343F56</color>
+    <color name="app_orange">#FF7903</color>
+    <color name="app_red">#9F2A05</color>
+    <color name="app_brown">#6C3625</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

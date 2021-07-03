@@ -3,7 +3,7 @@
     <style name="Theme.BhagvatGeetaApp" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/app_orange</item>
-        <item name="colorPrimaryVariant">@color/app_blue</item>
+        <item name="colorPrimaryVariant">@color/app_brown</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/app_red</item>

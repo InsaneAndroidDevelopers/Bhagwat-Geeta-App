@@ -28,7 +28,7 @@ class AllChaptersAdapter(private val chapterList: ArrayList<ChaptersItem>) : Rec
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindItems(chapter: ChaptersItem) {
-            itemView.chapter_number.text = "Chapter - ${chapter.chapter_number}"
+            itemView.chapter_number.text = " ${chapter.chapter_number}"
         }
     }
 
