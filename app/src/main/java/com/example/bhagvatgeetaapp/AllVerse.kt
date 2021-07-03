@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.bhagvatgeetaapp.adapters.AllVersesAdapter
 import com.example.bhagvatgeetaapp.ui.GeetaViewModel
@@ -26,7 +28,14 @@ class AllVerse : AppCompatActivity() {
 
         Log.d("TAG", name.toString())
 
-        all_verse_view.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        all_verse_view.clipChildren = false
+        all_verse_view.clipToPadding = false
+        all_verse_view.offscreenPageLimit = 3
+
+        val compositePageTransformer = CompositePageTransformer()
+        compositePageTransformer.addTransformer(MarginPageTransformer(30))
+        all_verse_view.setPageTransformer(compositePageTransformer)
+
         adapter = AllVersesAdapter(applicationContext,viewModel.provideFilterVerses(number, this), name!!)
         all_verse_view.adapter = adapter
 

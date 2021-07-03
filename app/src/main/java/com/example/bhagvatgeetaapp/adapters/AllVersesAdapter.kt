@@ -32,11 +32,14 @@ class AllVersesAdapter(val context: Context, val versesList: ArrayList<VersesIte
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindItems(verse: VersesItem) {
-            itemView.shlokText.text =  verse.text
-            itemView.meaningText.text = verse.meaning
-            itemView.chapter_name.text = chapName
+            itemView.chapter_name.text = chapName.trim()
             itemView.chapter_tv.text = "Chapter - ${verse.chapter_number}"
             itemView.verse_tv.text = "Verse - ${verse.verse_number}"
+            itemView.shlokText.text =  verse.text.trim()
+            itemView.wordMeaningText.text = verse.word_meanings.trim()
+            itemView.transliterationText.text = verse.transliteration.trim()
+            itemView.meaningText.text = verse.meaning.trim()
+
         }
     }
 }
