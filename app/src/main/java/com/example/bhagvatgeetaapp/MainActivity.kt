@@ -1,11 +1,9 @@
 package com.example.bhagvatgeetaapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -99,19 +97,35 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_Rate -> {
-                Toast.makeText(applicationContext, "Rate", Toast.LENGTH_SHORT).show()
+                val uri = Uri.parse("https://play.google.com/store/apps/details?id=${applicationContext.packageName}")
+                val intent = Intent(Intent.ACTION_VIEW, uri)
+                try{
+                    startActivity(intent)
+                }catch (e: Exception){
+                    Toast.makeText(this, "Unable to open", Toast.LENGTH_SHORT).show()
+                }
                 return true
             }
             R.id.action_share -> {
-                Toast.makeText(applicationContext, "Share", Toast.LENGTH_SHORT).show()
+                try {
+                    val intent = Intent(Intent.ACTION_SEND)
+                    intent.type = "text/plain"
+                    intent.putExtra(Intent.EXTRA_SUBJECT, "Bhagwat Geeta App")
+                    intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=${applicationContext.packageName}")
+                    startActivity(Intent.createChooser(intent, "Share With"))
+                } catch(e: Exception){
+                    Toast.makeText(this, "Unable to Share", Toast.LENGTH_SHORT).show()
+                }
                 return true
             }
             R.id.action_feedback-> {
-                Toast.makeText(applicationContext, "Send Feedback", Toast.LENGTH_SHORT).show()
-                return true
-            }
-            R.id.action_about -> {
-                Toast.makeText(applicationContext, "About", Toast.LENGTH_SHORT).show()
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("elitechdevelopers@gmail.com"))
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback")
+                intent.putExtra(Intent.EXTRA_TEXT, "Write a feedback")
+                intent.type = "message/rfc822"
+                startActivity(Intent.createChooser(intent, "Send Feedback"))
+
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
