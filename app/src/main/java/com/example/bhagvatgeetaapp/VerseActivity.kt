@@ -18,6 +18,8 @@ class VerseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verse)
+        supportActionBar!!.title = "Bhagwat Geeta"
+        
         viewModel = ViewModelProviders.of(this, ViewModelFactory()).get(GeetaViewModel::class.java)
 
         chapter = intent.getIntExtra("ChapterNum", -1)

@@ -8,6 +8,6 @@
         <item>@font/arizonia</item>
         <item>@font/berkshire_swash</item>
 <!--        <item>@font/bigelow_rules</item>-->
-        <item>@font/kaushan_script</item>
+<!--        <item>@font/kaushan_script</item>-->
     </array>
 </resources>

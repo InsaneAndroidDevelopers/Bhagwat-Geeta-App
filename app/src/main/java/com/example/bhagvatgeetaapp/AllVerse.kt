@@ -25,6 +25,8 @@ class AllVerse : AppCompatActivity() {
         val number = intent.getIntExtra("Number",0)
         val name = intent.getStringExtra("Name")
 
+       supportActionBar!!.title = "Chapter - $number"
+
         Log.d("TAG", name.toString())
 
         all_verse_view.clipChildren = false

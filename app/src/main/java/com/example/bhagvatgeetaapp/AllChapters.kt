@@ -22,6 +22,7 @@ class AllChapters : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_chapters)
+        supportActionBar!!.title = "Chapters"
 
         viewModel = ViewModelProviders.of(this, ViewModelFactory()).get(GeetaViewModel::class.java)
 
