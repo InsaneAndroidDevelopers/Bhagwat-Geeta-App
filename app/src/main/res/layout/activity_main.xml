@@ -33,11 +33,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="READ CHAPTER WISE"
-                android:fontFamily="@font/kaushan_script"
+                android:fontFamily="@font/akronim"
+                android:textColor="@color/app_red"
+                android:textSize="28sp"
                 android:layout_centerInParent="true"
                 android:textAlignment="center"
-                android:textSize="20sp"
-                android:textColor="@color/black"
                 android:textStyle="bold" />
 
         </RelativeLayout>
@@ -54,12 +54,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="READ RANDOM WISE"
-                android:fontFamily="@font/kaushan_script"
+                android:text="READ RANDOM SHLOKA"
                 android:layout_centerInParent="true"
                 android:textAlignment="center"
-                android:textSize="20sp"
-                android:textColor="@color/black"
+                android:fontFamily="@font/akronim"
+                android:textColor="@color/app_red"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
