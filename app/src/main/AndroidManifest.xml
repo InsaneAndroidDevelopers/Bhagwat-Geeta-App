@@ -10,7 +10,6 @@
         android:roundIcon="@drawable/gita_app_icon1"
         android:supportsRtl="true"
         android:theme="@style/Theme.BhagvatGeetaApp">
-        <activity android:name=".AboutActivity" />
         <activity android:name=".VerseActivity" />
         <activity android:name=".AllVerse" />
         <activity android:name=".AllChapters" />

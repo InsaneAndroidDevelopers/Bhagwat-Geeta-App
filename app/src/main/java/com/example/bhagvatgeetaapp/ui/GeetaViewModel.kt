@@ -6,7 +6,6 @@ import com.example.bhagvatgeetaapp.models.ChaptersItem
 import com.example.bhagvatgeetaapp.models.VersesItem
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-//import com.example.bhagvatgeetaapp.repository.GeetaRepository
 import java.io.IOException
 import java.lang.reflect.Type
 

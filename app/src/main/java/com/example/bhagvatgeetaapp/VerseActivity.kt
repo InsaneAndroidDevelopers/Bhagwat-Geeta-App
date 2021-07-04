@@ -36,8 +36,10 @@ class VerseActivity : AppCompatActivity() {
 
     private fun display(verse: VersesItem){
         tv_chNum.text = "Chapter ${verse.chapter_number}"
-        tv_verNum.text =  "Verse ${verse.verse_number}"
-        tv_verText.text  = verse.text
-        tv_meanText.text = verse.meaning
+        tv_verseNum.text =  "Verse ${verse.verse_number}"
+        tv_verseText.text  = verse.text.trim()
+        tv_wordMeaning.text = verse.word_meanings.trim()
+        tv_transliteration.text = verse.transliteration.trim()
+        tv_meaning.text = verse.meaning.trim()
     }
 }

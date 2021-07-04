@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
-import androidx.viewpager2.widget.ViewPager2
 import com.example.bhagvatgeetaapp.adapters.AllVersesAdapter
 import com.example.bhagvatgeetaapp.ui.GeetaViewModel
 import com.example.bhagvatgeetaapp.ui.ViewModelFactory
@@ -33,7 +32,11 @@ class AllVerse : AppCompatActivity() {
         all_verse_view.offscreenPageLimit = 3
 
         val compositePageTransformer = CompositePageTransformer()
-        compositePageTransformer.addTransformer(MarginPageTransformer(30))
+        compositePageTransformer.addTransformer(MarginPageTransformer(20))
+        compositePageTransformer.addTransformer { page, position->
+            val r = 1 - Math.abs(position)
+            page.scaleY = ((0.85 + r * 0.15f).toFloat())
+        }
         all_verse_view.setPageTransformer(compositePageTransformer)
 
         adapter = AllVersesAdapter(applicationContext,viewModel.provideFilterVerses(number, this), name!!)

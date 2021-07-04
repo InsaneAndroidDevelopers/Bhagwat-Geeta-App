@@ -11,8 +11,8 @@
         android:id="@+id/all_verse_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp"/>
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
