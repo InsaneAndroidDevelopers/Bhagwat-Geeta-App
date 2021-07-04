@@ -28,4 +28,19 @@
 sukhaṁ duḥkhaṁ bhavo ’bhāvo bhayaṁ chābhayameva cha
 </string>
     <string name="decription">The first chapter of the Bhagavad Gita - \"Arjuna Vishada Yoga\" introduces the setup, the setting, the characters and the circumstances that led to the epic battle of Mahabharata, fought between the Pandavas and the Kauravas. It outlines the reasons that led to the revelation of the of Bhagavad Gita.\nAs both armies stand ready for the battle, the mighty warrior Arjuna, on observing the warriors on both sides becomes increasingly sad and depressed due to the fear of losing his relatives and friends and the consequent sins attributed to killing his own relatives. So, he surrenders to Lord Krishna, seeking a solution. Thus, follows the wisdom of the Bhagavad Gita."</string>
+    <string name="read_chapter_wise">READ CHAPTER WISE</string>
+    <string name="read_random_verse">READ RANDOM VERSE</string>
+    <string name="or_search_a_particular_verse">-----Or search a particular verse-----</string>
+    <string name="go_to_verse">GO TO VERSE</string>
+    <string name="transliterations">Transliteration</string>
+    <string name="translation">Translation</string>
+    <string name="chapter">CHAPTER</string>
+    <string name="_10">10</string>
+    <string name="chapter_1">Chapter: 1</string>
+    <string name="verse_1">Verse: 1</string>
+    <string name="word_meanings">Word Meanings</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="share_app">Share App</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="chapter_no_1S">Chapter No: 1</string>
 </resources>

@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="CHAPTER"
+                android:text="@string/chapter"
                 android:fontFamily="@font/akronim"
                 android:textColor="@color/app_red"
                 android:textSize="28sp"
@@ -79,7 +79,7 @@
                 android:layout_below="@+id/chapter_head"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/akronim"
-                android:text="10"
+                android:text="@string/_10"
                 android:textColor="@color/app_red"
                 android:textSize="60sp" />
 

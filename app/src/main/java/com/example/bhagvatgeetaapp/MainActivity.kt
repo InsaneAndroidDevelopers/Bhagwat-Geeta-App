@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 selectedVerse = position
-                Toast.makeText(this@MainActivity, "Chapter -${selectedChapter+1} Verse - ${selectedVerse+1}", Toast.LENGTH_SHORT).show()
             }
         }
     }
