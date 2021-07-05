@@ -125,9 +125,9 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("elitechdevelopers@gmail.com"))
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback")
                 intent.putExtra(Intent.EXTRA_TEXT, "Write a feedback")
-                intent.type = "message/rfc822"
+                intent.type = "text/plain"
+                intent.setPackage("com.google.android.gm")
                 startActivity(Intent.createChooser(intent, "Send Feedback"))
-
                 return true
             }
             else -> return super.onOptionsItemSelected(item)

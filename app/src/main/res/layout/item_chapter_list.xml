@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <com.google.android.material.card.MaterialCardView
     android:id="@+id/card_view"
     android:layout_width="match_parent"
@@ -45,45 +44,48 @@
         <!--        -->
         <!--    </LinearLayout>-->
 
-        <RelativeLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/card"
+        android:padding="20dp">
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/img"-->
+        <!--                android:layout_width="50dp"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:layout_centerHorizontal="true"-->
+        <!--                android:src="@drawable/book"-->
+        <!--                android:scaleType="centerCrop"-->
+        <!--                android:background="@null"/>-->
+
+        <TextView
+            android:id="@+id/chapter_head"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:background="@drawable/card"
-            android:padding="20dp">
-
-<!--            <ImageView-->
-<!--                android:id="@+id/img"-->
-<!--                android:layout_width="50dp"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:layout_centerHorizontal="true"-->
-<!--                android:src="@drawable/book"-->
-<!--                android:scaleType="centerCrop"-->
-<!--                android:background="@null"/>-->
-
-            <TextView
-                android:id="@+id/chapter_head"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="@string/chapter"
-                android:fontFamily="@font/akronim"
-                android:textColor="@color/app_red"
-                android:textSize="28sp"
-                android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/akronim"
+            android:gravity="center"
+            android:text="@string/chapter"
+            android:textColor="@color/app_red"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
 
-            <TextView
-                android:id="@+id/chapter_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/chapter_head"
-                android:layout_centerHorizontal="true"
-                android:fontFamily="@font/akronim"
-                android:text="@string/_10"
-                android:textColor="@color/app_red"
-                android:textSize="60sp" />
+        <TextView
+            android:id="@+id/chapter_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chapter_head"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/akronim"
+            android:gravity="center"
+            android:text="@string/_10"
+            android:textColor="@color/app_red"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
-        </RelativeLayout>
+    </RelativeLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+</com.google.android.material.card.MaterialCardView>
 
