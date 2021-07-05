@@ -7,11 +7,13 @@ import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.example.bhagvatgeetaapp.ui.GeetaViewModel
 import com.example.bhagvatgeetaapp.ui.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.custom_dialog.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -124,10 +126,21 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(Intent.ACTION_SEND)
                 intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("elitechdevelopers@gmail.com"))
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback")
-                intent.putExtra(Intent.EXTRA_TEXT, "Write a feedback")
                 intent.type = "text/plain"
                 intent.setPackage("com.google.android.gm")
                 startActivity(Intent.createChooser(intent, "Send Feedback"))
+                return true
+            }
+            R.id.action_about->{
+                val view = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null)
+                val alertDialog = AlertDialog.Builder(this)
+                        .setView(view)
+                        .setCancelable(true)
+                        .create()
+                alertDialog.show()
+                view.btn_close.setOnClickListener {
+                    alertDialog.dismiss()
+                }
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
