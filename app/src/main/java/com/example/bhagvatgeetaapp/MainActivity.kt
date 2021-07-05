@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar!!.title = "Bhagwat Geeta"
+        supportActionBar!!.title = "Bhagavad Geeta"
 
         viewModel = ViewModelProviders.of(this, ViewModelFactory()).get(GeetaViewModel::class.java)
         val chaptersArrayAdapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, resources.getStringArray(R.array.chapters))

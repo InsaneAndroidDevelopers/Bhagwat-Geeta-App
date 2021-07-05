@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bhagvat Geeta App</string>
+    <string name="app_name">Bhagavad Geeta</string>
     <string-array name="chapters">
         <item>Chapter 1</item>
         <item>Chapter 2</item>
