@@ -4,9 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
-    android:orientation="vertical"
-    android:background="@color/white"
-    >
+    android:orientation="vertical">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -20,8 +18,8 @@
         android:text="Version: 1.0"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginVertical="4dp"
-        android:textColor="@color/black"/>
+        android:textSize="16sp"
+        android:layout_marginVertical="4dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -34,7 +32,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Created by -"
-        android:textColor="@color/black"/>
+        android:textSize="16sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:layout_width="match_parent"
